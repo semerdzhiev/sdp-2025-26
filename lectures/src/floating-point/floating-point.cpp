@@ -1,3 +1,7 @@
+//
+// A simple example, which demonstrates the specifics of NaN and Inf
+//
+
 #include <cmath>
 #include <cstring>
 #include <iostream>
