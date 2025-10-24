@@ -10,7 +10,7 @@ include(CMakePrintHelpers)
 
 # Uncomment the line below, if you want to specify additional
 # locations to be searched by find_package and include.
-# For example, a local cmake/ direcory within the project, etc.
+# For example, a local cmake/ directory within the project, etc.
 # list(PREPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 # Display some useful information
@@ -80,7 +80,8 @@ endif()
 
 ################################################################################
 #
-# Compilation options that apply to all projects
+# Configuration settings which apply to all projects
+# and are related to how they are being built.
 #
 
 #
@@ -90,6 +91,10 @@ endif()
 # https://learn.microsoft.com/en-us/cpp/build/reference/mp-build-with-multiple-processes?view=msvc-170
 #
 add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/MP>)
+
+# Specifies that executables should be placed in the "/bin" subfolder of the output directory.
+# Remove/comment this line below if you prefer to have the default behavior.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 
 ################################################################################
