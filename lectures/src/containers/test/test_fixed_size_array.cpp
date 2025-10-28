@@ -75,7 +75,7 @@ SCENARIO("fixed_size_array(size_t N > 0) correctly constructs an object with the
   }
 }
 
-SCENARIO("fixed_size_array(size_t N > 0) throws when passed a size that does not fit in memory", "[fixed_size_array]")
+SCENARIO("fixed_size_array(size_t N > 0) throws when passed a size that does not fit in memory", "[fixed_size_array][bad_alloc]")
 {
   GIVEN("A size, which does not fit in the heap")
   {

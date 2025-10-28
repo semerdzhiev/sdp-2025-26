@@ -59,7 +59,7 @@ TEST_CASE_METHOD(NonEmptyArrayFixture, "dynamic_array::dynamic_array(N>0) constr
   checkNotEmpty(arr, initialSize);
 }
 
-TEST_CASE("dynamic_array::dynamic_array(N>0) throws when memory allocation fails", "[dynamic_array]")
+TEST_CASE("dynamic_array::dynamic_array(N>0) throws when memory allocation fails", "[dynamic_array][bad_alloc]")
 {
   const size_t sizeTooLargeForTheHeap = 100'000'000'000;
   REQUIRE_THROWS_AS(dynamic_array<int>(sizeTooLargeForTheHeap), std::bad_alloc);
@@ -267,7 +267,7 @@ TEST_CASE_METHOD(ConsecutiveNumbersFixture, "dynamic_array::reserve(N > 2*capaci
   REQUIRE(contentsRemainTheSame());
 }
 
-TEST_CASE_METHOD(ConsecutiveNumbersFixture, "dynamic_array::reserve() throws when the requested capacity is too large and the array remain unchanged (strong exception safety)")
+TEST_CASE_METHOD(ConsecutiveNumbersFixture, "dynamic_array::reserve() throws when the requested capacity is too large and the array remain unchanged (strong exception safety)", "[dynamic_array][bad_alloc]")
 {
   const size_t sizeTooLargeForTheHeap = 100'000'000'000;
   dynamic_array<int> arr;
