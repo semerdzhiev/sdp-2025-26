@@ -15,4 +15,4 @@ target_sources(
 		"Test-MockingObjects.cpp"
 )
 
-catch_discover_tests(unit-tests-utilities)
+catch_discover_tests(unit-tests-utilities ADD_TAGS_AS_LABELS)

@@ -16,4 +16,4 @@ target_sources(
 		"test_fixed_size_array.cpp"
 )
 
-catch_discover_tests(test-containers)
+catch_discover_tests(test-containers ADD_TAGS_AS_LABELS)
