@@ -118,9 +118,8 @@ public:
     } else {
       Node* new_element = new Node(data, position.current->next);
       position.current->next = new_element;
+      ++size;
     }
-
-    ++size;
   }
 
   void insert_before(const T& data, const Iterator& position) {
@@ -130,8 +129,6 @@ public:
       Iterator iter = previous(position);
       insert_after(data, iter);
     }
-
-    ++size;
   }
 
   void remove_first() {    
@@ -188,19 +185,6 @@ public:
 
   Iterator end() const {
     return Iterator(nullptr);
-  }
-
-  void reverse() {
-    Node* prev = nullptr, *iter = first, *next;
-
-    std::swap(first, last);
-    
-    while (iter) {
-      next = iter->next;
-      iter->next = prev;
-      prev = iter;
-      iter = next;
-    }
   }
 
 private:
